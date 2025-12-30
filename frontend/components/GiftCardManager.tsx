@@ -24,7 +24,6 @@ import { CustomDatePicker } from "@/components/ui/date-picker";
 import { toast } from "sonner";
 import { BN } from "@coral-xyz/anchor";
 import { COMMON_TOKENS, getTokenByMint } from "@/lib/tokens";
-import { format } from "date-fns";
 
 export function GiftCardManager() {
   const { publicKey } = useWallet();

@@ -73,7 +73,7 @@ export function CustomDatePicker({
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0" align="start" onInteractOutside={() => setIsOpen(false)}>
-        <div className="p-3">
+        <div className="p-2">
           <Calendar
             value={date || null}
             onChange={handleChange}
