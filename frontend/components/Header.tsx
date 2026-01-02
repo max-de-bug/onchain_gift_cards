@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { WalletButton } from "@/components/WalletButton";
 import { ChristmasToggle } from "@/components/ChristmasToggle";
-import { Gift, Home, Package, Info, type LucideIcon } from "lucide-react";
+import { Gift, Home, Package, Info, Coins, type LucideIcon } from "lucide-react";
 import { useChristmasStore } from "@/lib/store/christmasStore";
 import { cn } from "@/lib/utils";
 
@@ -18,6 +18,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   { href: "/", label: "Home", icon: Home },
   { href: "/create", label: "Create", icon: Gift },
+  { href: "/faucet", label: "Faucet", icon: Coins },
   { href: "/my-cards", label: "My Cards", icon: Package },
   { href: "/about", label: "About", icon: Info },
 ];

@@ -45,6 +45,10 @@
               {
                 "kind": "account",
                 "path": "gift_giver"
+              },
+              {
+                "kind": "arg",
+                "path": "card_id"
               }
             ]
           }
@@ -132,6 +136,10 @@
       ],
       "args": [
         {
+          "name": "card_id",
+          "type": "u64"
+        },
+        {
           "name": "amount",
           "type": "u64"
         },
@@ -184,6 +192,10 @@
                 "kind": "account",
                 "path": "gift_card.owner",
                 "account": "GiftCard"
+              },
+              {
+                "kind": "arg",
+                "path": "card_id"
               }
             ]
           }
@@ -211,6 +223,10 @@
         }
       ],
       "args": [
+        {
+          "name": "card_id",
+          "type": "u64"
+        },
         {
           "name": "amount",
           "type": "u64"
@@ -255,6 +271,10 @@
               {
                 "kind": "account",
                 "path": "owner"
+              },
+              {
+                "kind": "arg",
+                "path": "card_id"
               }
             ]
           }
@@ -278,7 +298,12 @@
           "name": "token_program"
         }
       ],
-      "args": []
+      "args": [
+        {
+          "name": "card_id",
+          "type": "u64"
+        }
+      ]
     },
     {
       "name": "rule_set",
@@ -318,6 +343,10 @@
               {
                 "kind": "account",
                 "path": "owner"
+              },
+              {
+                "kind": "arg",
+                "path": "card_id"
               }
             ]
           }
@@ -328,6 +357,10 @@
         }
       ],
       "args": [
+        {
+          "name": "card_id",
+          "type": "u64"
+        },
         {
           "name": "allowed_merchants",
           "type": {
@@ -456,6 +489,11 @@
       "code": 6009,
       "name": "NoBalanceToRefund",
       "msg": "No balance to refund"
+    },
+    {
+      "code": 6010,
+      "name": "InvalidCardId",
+      "msg": "Invalid card ID"
     }
   ],
   "types": [
@@ -464,6 +502,10 @@
       "type": {
         "kind": "struct",
         "fields": [
+          {
+            "name": "card_id",
+            "type": "u64"
+          },
           {
             "name": "gift_card",
             "type": "pubkey"
@@ -487,6 +529,13 @@
       "type": {
         "kind": "struct",
         "fields": [
+          {
+            "name": "card_id",
+            "docs": [
+              "Unique card identifier (allows multiple cards per owner)"
+            ],
+            "type": "u64"
+          },
           {
             "name": "owner",
             "docs": [
@@ -561,6 +610,10 @@
         "kind": "struct",
         "fields": [
           {
+            "name": "card_id",
+            "type": "u64"
+          },
+          {
             "name": "owner",
             "type": "pubkey"
           },
@@ -585,6 +638,10 @@
         "kind": "struct",
         "fields": [
           {
+            "name": "card_id",
+            "type": "u64"
+          },
+          {
             "name": "gift_card",
             "type": "pubkey"
           },
@@ -608,6 +665,10 @@
       "type": {
         "kind": "struct",
         "fields": [
+          {
+            "name": "card_id",
+            "type": "u64"
+          },
           {
             "name": "gift_card",
             "type": "pubkey"

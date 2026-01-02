@@ -34,16 +34,30 @@ export function useProgram() {
   return program;
 }
 
-// Helper function to get gift card PDA
-export function getGiftCardPDA(owner: PublicKey, programId: PublicKey): [PublicKey, number] {
+// Helper function to get gift card PDA with card_id for multiple cards support
+export function getGiftCardPDA(owner: PublicKey, cardId: bigint, programId: PublicKey): [PublicKey, number] {
   // Buffer is available in Node.js environments and modern browsers
   const giftCardSeed = typeof Buffer !== "undefined" 
     ? Buffer.from("gift_card") 
     : new Uint8Array([103, 105, 102, 116, 95, 99, 97, 114, 100]); // "gift_card" as bytes
   
+  // Convert cardId to little-endian 8-byte array (u64)
+  const cardIdBytes = new Uint8Array(8);
+  let tempCardId = cardId;
+  for (let i = 0; i < 8; i++) {
+    cardIdBytes[i] = Number(tempCardId & BigInt(0xff));
+    tempCardId = tempCardId >> BigInt(8);
+  }
+  
   return PublicKey.findProgramAddressSync(
-    [giftCardSeed, owner.toBuffer()],
+    [giftCardSeed, owner.toBuffer(), cardIdBytes],
     programId
   );
 }
 
+// Generate a unique card ID based on timestamp and random number
+export function generateCardId(): bigint {
+  const timestamp = BigInt(Date.now());
+  const random = BigInt(Math.floor(Math.random() * 1000000));
+  return timestamp * BigInt(1000000) + random;
+}

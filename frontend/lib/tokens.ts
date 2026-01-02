@@ -10,7 +10,7 @@ export interface TokenInfo {
 export const COMMON_TOKENS: TokenInfo[] = [
   {
     symbol: "WSOL",
-    name: "Wrapped SOL",
+    name: "Wrapped SOL (WSOL)",
     mint: "So11111111111111111111111111111111111111112",
     decimals: 9,
   },
