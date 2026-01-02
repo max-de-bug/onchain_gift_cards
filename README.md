@@ -9,8 +9,17 @@ A decentralized gift card platform built on Solana blockchain, allowing users to
 
 ## 📹 Demo Video
 
-<!-- Add your demo video here -->
-[![Watch the Demo](https://vimeo.com/1151035606?share=copy&fl=sv&fe=ci)
+<div align="center">
+
+<a href="https://vimeo.com/1151035606" target="_blank">
+  <img src="https://i.vimeocdn.com/video/1151035606-d" alt="Watch the Demo Video" style="width:100%;max-width:640px;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+</a>
+
+<p><strong>Click the thumbnail above to watch the demo video</strong></p>
+
+> ⚠️ **Note:** GitHub README markdown doesn't support inline video playback for security reasons. Videos must be viewed on their hosting platform (Vimeo, YouTube, etc.). This is a GitHub limitation, not a project limitation.
+
+</div>
 
 
 ## ✨ Features
@@ -55,17 +64,26 @@ A decentralized gift card platform built on Solana blockchain, allowing users to
 
 ### Key Components
 ```
-┌─────────────────┐
-│   Smart Contract│
-│   (Anchor/Rust) │
-└────────┬────────┘
-         │
-         │ IDL/Instructions
-         │
-┌────────▼────────┐
-│  Next.js Frontend│
-│  (TypeScript)    │
-└─────────────────┘
+┌─────────────────────────────────────────────────────────────┐
+│                    User Action Flow                          │
+└─────────────────────────────────────────────────────────────┘
+                            │
+        ┌───────────────────┼───────────────────┐
+        │                   │                   │
+    CREATE              REDEEM               REFUND
+        │                   │                   │
+        ▼                   ▼                   ▼
+┌──────────────┐   ┌──────────────┐   ┌──────────────┐
+│ 1. Validate  │   │ 1. Check     │   │ 1. Verify    │
+│    dates     │   │    unlocked  │   │    refund    │
+│ 2. Transfer  │   │ 2. Validate  │   │    date      │
+│    tokens    │   │    merchant  │   │ 2. Transfer  │
+│ 3. Create    │   │ 3. Transfer  │   │    all funds │
+│    accounts  │   │    tokens    │   │ 3. Set       │
+│ 4. Emit event│   │ 4. Update    │   │    balance=0 │
+└──────────────┘   │    balance   │   │ 4. Emit event│
+                   │ 5. Emit event│   └──────────────┘
+                   └──────────────┘
 ```
 
 ## 🚀 Quick Start
