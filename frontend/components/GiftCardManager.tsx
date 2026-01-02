@@ -175,9 +175,9 @@ function CreateGiftCardForm({
           console.error("Failed to set merchant rules:", ruleError);
         }
       } else {
-        toast.success("Gift card created successfully!", {
-          description: `Transaction: ${txSignature.slice(0, 8)}...`,
-        });
+      toast.success("Gift card created successfully!", {
+        description: `Transaction: ${txSignature.slice(0, 8)}...`,
+      });
       }
       
       resetCreateForm();

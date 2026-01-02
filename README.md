@@ -7,18 +7,10 @@ A decentralized gift card platform built on Solana blockchain, allowing users to
 ![Next.js](https://img.shields.io/badge/Next.js-16.1-000000?style=for-the-badge&logo=next.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 
-## 📹 Demo Video
+## 📸 Screenshot
 
 <div align="center">
-
-<a href="https://vimeo.com/1151035606" target="_blank">
-  <img src="https://i.vimeocdn.com/video/1151035606-d" alt="Watch the Demo Video" style="width:100%;max-width:640px;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,0.2);">
-</a>
-
-<p><strong>Click the thumbnail above to watch the demo video</strong></p>
-
-> ⚠️ **Note:** GitHub README markdown doesn't support inline video playback for security reasons. Videos must be viewed on their hosting platform (Vimeo, YouTube, etc.). This is a GitHub limitation, not a project limitation.
-
+  <img src="frontend/public/onchain_gift_card.png" alt="Onchain Gift Cards App Screenshot" style="width:100%;max-width:640px;border-radius:8px;box-shadow:0 4px 8px rgba(0,0,0,0.2);">
 </div>
 
 
